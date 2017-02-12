@@ -1,6 +1,6 @@
 """
     N-body simulation.
-    Using local rather than global variables. Add "Bodies" as input argument. Improve running time from 96 sec to 91.1 sec.
+    Using local rather than global variables. Add "Bodies" as input argument. Improve the running time from 96 sec to 91.1 sec.
 """
 
 PI = 3.14159265358979323
