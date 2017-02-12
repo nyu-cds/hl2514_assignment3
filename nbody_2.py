@@ -1,6 +1,7 @@
 """
     N-body simulation.
-    Using alternatives to membership testing of list. Change list to dictionary for serching. Improve running time from 96 sec to 91.4 sec.
+    Using alternatives to membership testing of list. Change list to dictionary for serching.
+    Improve running time from 96 sec to 91.4 sec.
 """
 
 PI = 3.14159265358979323

@@ -1,6 +1,7 @@
 """
     N-body simulation.
-    1. By reducing the function call overhead could improve the running time from 96 sec to 46 sec.
+    By reducing the function call. 
+    Improve the running time from 96 sec to 46 sec.
 """
 
 PI = 3.14159265358979323
