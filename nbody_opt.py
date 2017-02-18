@@ -31,7 +31,7 @@ def advance(dt, BODIES, body_name_pairs):
         v2[1] += dy * mag_1
         v2[2] += dz * mag_1
         
-    for body in BODIES.keys():
+    for body in BODIES:
         (r, [vx, vy, vz], m) = BODIES[body]
         r[0] += dt * vx
         r[1] += dt * vy
@@ -48,7 +48,7 @@ def report_energy(BODIES, body_name_pairs, e=0.0):
         (dx, dy, dz) = (x1-x2, y1-y2, z1-z2)
         e -= (m1 * m2) / ((dx * dx + dy * dy + dz * dz) ** 0.5)
         
-    for body in BODIES.keys():
+    for body in BODIES:
         (r, [vx, vy, vz], m) = BODIES[body]
         e += m * (vx * vx + vy * vy + vz * vz) / 2.
         
@@ -59,7 +59,7 @@ def offset_momentum(ref, BODIES, px=0.0, py=0.0, pz=0.0):
         ref is the body in the center of the system
         offset values from this reference
     '''
-    for body in BODIES.keys():
+    for body in BODIES:
         (r, [vx, vy, vz], m) = BODIES[body]
         px -= vx * m
         py -= vy * m
@@ -127,5 +127,6 @@ if __name__ == '__main__':
                     5.15138902046611451e-05 * SOLAR_MASS)}
 
     body_name_pairs = list(combinations(BODIES, 2))
+    # pairs of body names
     nbody(100, 'sun', 20000, BODIES, body_name_pairs)
 
