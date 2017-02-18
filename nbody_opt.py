@@ -1,4 +1,6 @@
 """
+    Author: Hao Liu
+    Date: 02/18/2017
     N-body simulation.
     - Reducing function call overhead
     - Using local rather than global variables
@@ -35,9 +37,6 @@ def advance(dt, BODIES, body_name_pairs):
         r[1] += dt * vy
         r[2] += dt * vz
         #   update_rs(r, dt, vx, vy, vz)
-
-# def compute_energy(m1, m2, dx, dy, dz):
-#     return (m1 * m2) / ((dx * dx + dy * dy + dz * dz) ** 0.5)
     
 def report_energy(BODIES, body_name_pairs, e=0.0):
     '''
