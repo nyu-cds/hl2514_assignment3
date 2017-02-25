@@ -8,7 +8,7 @@
     Improve the running time from 96 sec to 26.5 sec.
     The relative speedup is R = 96/26.5 = 3.62
 """
-from itertools import combinations
+from itertools import combinations, starmap, repeat
 
 
 def advance(dt, BODIES, body_name_pairs):
@@ -82,9 +82,11 @@ def nbody(loops, reference, iterations, BODIES, body_name_pairs):
     offset_momentum(BODIES[reference], BODIES)
 
     for _ in range(loops):
-        for _ in range(iterations):
-            advance(0.01, BODIES, body_name_pairs)
+        starmap(advance, repeat((0.01, BODIES, body_name_pairs), times=iterations)) 
+        #change for loop into starmap
         print(report_energy(BODIES, body_name_pairs))
+
+
 
 if __name__ == '__main__':
     PI = 3.14159265358979323
@@ -127,6 +129,6 @@ if __name__ == '__main__':
                     5.15138902046611451e-05 * SOLAR_MASS)}
 
     body_name_pairs = list(combinations(BODIES, 2))
-    # pairs of body names
+    # use combination to generate pairs of body names
     nbody(100, 'sun', 20000, BODIES, body_name_pairs)
 
