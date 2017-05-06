@@ -1,7 +1,7 @@
 '''
 Author: Hao Liu
 Date: 5/6/2017
-Spark script used for calculating the average valueofo square root.
+Spark script used for calculating the average valueo of square root.
 '''
 
 from pyspark import SparkContext
@@ -16,3 +16,4 @@ if __name__ == '__main__':
 	nums_sqrt = nums.map(sqrt)
 	# Calculate the average square root
 	print('Average square root = {}'.format(nums_sqrt.fold(0, add)/float(nums.count())))
+	sc.stop()
